@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-home {
+  background-color: #0c192c;
+}
+
+.bubbles {
+  position: relative;
+  display: flex;
+}
+
+.bubbles span {
+  position: relative;
+  min-width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4fc3dc, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  margin: 0 4px;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(75s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+  background: rgb(135, 255, 151);
+  box-shadow: 0 0 10px rgb(135, 255, 151), 0 0 50px rgb(135, 255, 151),
+    0 0 100px rgb(135, 255, 151);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+.header img {
+  width: 15%;
+}
+
+.content-header img {
+  width: 30%;
+}
+
+.content {
+  max-width: 80%;
+  border-radius: 20px;
+  background-color: rgba(185, 179, 179, 0.196);
+  backdrop-filter: blur(8px);
+  padding: 30px 38px;
+  margin-bottom: 30px;
+}
+
+.alert {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  display: none;
+  width: 300px;
+}
+
+.btn:disabled {
+  background-color: gray;
+}
